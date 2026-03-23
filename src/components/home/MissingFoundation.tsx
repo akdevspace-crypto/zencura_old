@@ -109,7 +109,7 @@ export default function MissingFoundation() {
                                 <div className="absolute top-[22%] left-[34%] w-[52%] h-[48%] z-[30] bg-[#fbf9f4] p-[3%] pb-[8%] shadow-[0_12px_35px_rgba(0,0,0,0.35)] rotate-[4deg] rounded-sm">
                                     <div className="relative w-full h-full overflow-hidden shadow-[inset_0_2px_10px_rgba(0,0,0,0.2)]">
                                         <Image
-                                            src="/images/community.png"
+                                            src="/community.png"
                                             alt="Heritage Photo"
                                             fill
                                             sizes="(max-width: 768px) 80vw, 500px"
