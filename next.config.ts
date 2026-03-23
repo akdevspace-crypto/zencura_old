@@ -1,24 +1,25 @@
 import type { NextConfig } from "next";
 
-import path from "path";
-
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export', // ✅ CRITICAL
+
+  devIndicators: false,
+
   images: {
+    unoptimized: true, // ✅ REQUIRED for static export
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.pravatar.cc',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com', // Since we used an Unsplash placeholder earlier
+        hostname: 'i.pravatar.cc',
+        pathname: '/**',
       }
     ],
   },
-  turbopack: {
-    root: path.join(__dirname, "./")
-  }
 };
 
 export default nextConfig;
