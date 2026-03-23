@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #EEEAE2;
+  --color-section: #DFD4C3;
+  --color-card: #FFFFFF;
+  --color-brand: #5D5646;
+  --color-accent: #A07D54;
+  --color-highlight: #3E5974;
+  --color-text-main: #4D4C4B;
+}
+
+:root {
+  --bg: #EEEAE2;
+  --section: #DFD4C3;
+  --card: #FFFFFF;
+
+  --primary: #5D5646;
+  --accent: #A07D54;
+  --highlight: #3E5974;
+
+  --text-body: #4D4C4B;
+
+  --background: var(--bg);
+  --foreground: var(--primary);
+
+  --radius-xl: 24px;
+  --radius-lg: 20px;
+
+  --font-olivera: "Olivera", "Instrument Serif", "Playfair Display", serif;
+  --font-source-serif: "Source Serif 4", Georgia, serif;
+  --font-manrope: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-satoshi: "Satoshi", "Manrope", ui-sans-serif, sans-serif;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-body);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  /* Optimized noise: removed heavy feTurbulence for a static, efficient SVG noise */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 50;
+  /* Blend mode removed for performance */
+  opacity: 0.15;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@font-face {
+  font-family: "olivera";
+  src: url("/font/Olivera_Demo.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: var(--font-olivera), ui-serif, Georgia, serif;
+  color: var(--primary);
+  letter-spacing: normal;
+  font-weight: 700;
+}
+
+/* Ornamental classes removed */
+
+.organic-mask {
+  mask-image: radial-gradient(circle, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+}
+
+
+.linen-texture {
+  position: relative;
+}
+
+.linen-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Optimized linen texture: lower overhead turbulence */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");
+  pointer-events: none;
+  /* Blend mode removed for performance */
+  opacity: 0.2;
+  will-change: transform;
+}
+
+@layer base {
+  /* Global border removed */
+}
