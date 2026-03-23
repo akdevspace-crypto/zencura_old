@@ -146,7 +146,7 @@ function WhyZencuraDesktop() {
                                         {/* inner image layer ON TOP */}
                                         <div className="absolute top-[18%] left-[12%] w-[76%] h-[62%] overflow-hidden z-[30]">
                                             <Image
-                                                src="/images/community.png"
+                                                src="/community.png"
                                                 alt="Zencura vision"
                                                 fill
                                                 className="object-cover sepia-[0.25] contrast-[1.08] brightness-[1.05] saturate-[0.9]"
